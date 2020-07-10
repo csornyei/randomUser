@@ -1,0 +1,23 @@
+.item {
+    width: 100%;
+    padding: 16px 6px;
+    box-sizing: border-box;
+
+    &Even {
+        background-color: var(--color-primary-med);
+
+        &:hover {
+            background-color: var(--color-primary-dark);
+            color: var(--color-secondary-light);
+        }
+    }
+
+    &Odd {
+        background-color: var(--color-secondary-dark);
+        color: var(--color-secondary-light);
+
+        &:hover {
+            background-color: var(--color-secondary-med);
+        }
+    }
+}
