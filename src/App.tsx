@@ -1,10 +1,15 @@
 import React from 'react';
-import './App.scss';
+import styles from './App.module.scss';
+
+import UserListContainer from './UserList/UserListContainer';
+import Profile from './Profile/Profile';
 
 function App() {
+
   return (
-    <div className="App">
-      <h1>Random Users</h1>
+    <div className={styles.app}>
+      <UserListContainer />
+      <Profile />
     </div>
   );
 }
