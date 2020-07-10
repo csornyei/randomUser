@@ -11,7 +11,8 @@ export const initialState : State = {
   filters: {
     ferfi: true,
     no: true
-  }
+  },
+  users: []
 }
 
 ReactDOM.render(

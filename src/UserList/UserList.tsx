@@ -1,13 +1,15 @@
 import React from 'react';
 import UserListItem from './UserListItem';
 import styles from './UserList.module.scss'
+import { useSelector } from 'react-redux';
+import { State } from '../utils/types';
 
 const UserList : React.FC = props => {
 
-    const users = [1, 2, 3, 4, 5, 6];
+    const users = useSelector((state: State) => state.users);
 
     const listItems = users.map((user, idx) => {
-        return <UserListItem index={idx} key={idx}/>
+        return <UserListItem index={idx} key={idx} user={user}/>
     })
 
     return (

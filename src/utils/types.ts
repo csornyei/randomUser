@@ -8,6 +8,22 @@ export type Filters = {
     no: boolean,
 }
 
+export type UserData = {
+    name: string,
+    pictures: {
+        thumbnail: string,
+        normal: string,
+    },
+    gender: string,
+    email: string,
+    cell: string,
+    postcode: number,
+    address: string,
+    dateOfBirth: string,
+    age: number
+}
+
 export type State = {
-    filters: Filters
+    filters: Filters,
+    users: UserData[]
 }
