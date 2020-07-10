@@ -1,12 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import configureStore from './state/store';
+import { State } from './utils/types';
+
+export const initialState : State = {
+  filters: {
+    ferfi: true,
+    no: true
+  }
+}
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={configureStore()}>
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
