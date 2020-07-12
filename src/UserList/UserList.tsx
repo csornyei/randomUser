@@ -6,9 +6,9 @@ import { State } from '../utils/types';
 
 const UserList : React.FC = props => {
 
-    const users = useSelector((state: State) => state.users);
+    const filteredUsers = useSelector((state: State) => state.filteredUsers);
 
-    const listItems = users.map((user, idx) => {
+    const listItems = filteredUsers.map((user, idx) => {
         return <UserListItem index={idx} key={idx} user={user}/>
     })
 

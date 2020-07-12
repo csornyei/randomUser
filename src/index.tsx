@@ -13,6 +13,7 @@ export const initialState : State = {
     no: true
   },
   users: [],
+  filteredUsers: [],
   selectedUser: null
 }
 

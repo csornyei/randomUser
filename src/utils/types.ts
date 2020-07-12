@@ -26,5 +26,6 @@ export type UserData = {
 export type State = {
     filters: Filters,
     users: UserData[],
+    filteredUsers: UserData[],
     selectedUser: UserData | null,
 }
