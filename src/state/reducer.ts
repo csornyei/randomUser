@@ -1,7 +1,7 @@
 import { Reducer } from "redux";
 import { Action, State } from '../utils/types';
 import { initialState } from "..";
-import { CHANGE_FILTER, ADD_USERS, USER_SELECTED } from "./actions";
+import { CHANGE_FILTER, ADD_USERS, USER_SELECTED, PAGE_CHANGED } from "./actions";
 import { filterUsers } from "../utils/helpers";
 
 export const reducer: Reducer<State, any> = (state: State | undefined = initialState, action: Action) => {
@@ -23,6 +23,11 @@ export const reducer: Reducer<State, any> = (state: State | undefined = initialS
             return {
                 ...state,
                 selectedUser: action.payload
+            }
+        case PAGE_CHANGED:
+            return {
+                ...state,
+                currentPage: action.payload
             }
         default:
             return state

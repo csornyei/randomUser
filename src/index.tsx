@@ -14,7 +14,8 @@ export const initialState : State = {
   },
   users: [],
   filteredUsers: [],
-  selectedUser: null
+  selectedUser: null,
+  currentPage: 1
 }
 
 
@@ -22,9 +23,10 @@ export const initialState : State = {
 // DONE - userek listazasa
 // DONE - userek szurese
 // DONE - iranyitoszamban legalabb ket prim
-// TODO - pagination
+// DONE - pagination
 // TODO - teszteles
 // TODO - profil oldal
+// TODO - responsive
 
 ReactDOM.render(
   <React.StrictMode>

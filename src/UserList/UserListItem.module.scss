@@ -1,6 +1,6 @@
 .item {
     width: 100%;
-    padding: 16px 6px;
+    padding: 2px;
     box-sizing: border-box;
 
     cursor: pointer;
@@ -41,5 +41,6 @@
 }
 
 .userText {
+    margin: 6px;
     padding-left: 12px;
 }

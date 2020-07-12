@@ -28,4 +28,5 @@ export type State = {
     users: UserData[],
     filteredUsers: UserData[],
     selectedUser: UserData | null,
+    currentPage: number,
 }

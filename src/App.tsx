@@ -6,6 +6,7 @@ import Profile from './Profile/Profile';
 import { dateParser, postcodeChecker } from './utils/helpers';
 import { useDispatch } from 'react-redux';
 import { addUsers } from './state/actions';
+import { REQUESTED_USERS } from './utils/constants';
 
 function getUsers(userCount: number, dispatch: Dispatch<any>) {
   fetch(`https://randomuser.me/api/?results=${userCount}`).then((response) => {
@@ -44,7 +45,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getUsers(100, dispatch);
+    getUsers(REQUESTED_USERS, dispatch);
   }, []);
 
   return (
