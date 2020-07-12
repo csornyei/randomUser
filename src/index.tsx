@@ -17,6 +17,15 @@ export const initialState : State = {
   selectedUser: null
 }
 
+
+// DONE - userek lekerese
+// DONE - userek listazasa
+// DONE - userek szurese
+// DONE - iranyitoszamban legalabb ket prim
+// TODO - pagination
+// TODO - teszteles
+// TODO - profil oldal
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={configureStore()}>

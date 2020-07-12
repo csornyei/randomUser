@@ -3,14 +3,14 @@ import styles from './App.module.scss';
 
 import UserListContainer from './UserList/UserListContainer';
 import Profile from './Profile/Profile';
-import { dateParser } from './utils/helpers';
+import { dateParser, postcodeChecker } from './utils/helpers';
 import { useDispatch } from 'react-redux';
 import { addUsers } from './state/actions';
 
 function getUsers(userCount: number, dispatch: Dispatch<any>) {
   fetch(`https://randomuser.me/api/?results=${userCount}`).then((response) => {
     response.json().then((data) => {
-      const users= data.results.map((user: any) => {
+      const users= data.results.filter((user: any) => postcodeChecker(user.location.postcode)).map((user: any) => {
         const name = `${user.name.first} ${user.name.last}`;
         const pictures = {
           thumbnail: user.picture.thumbnail,
@@ -19,6 +19,8 @@ function getUsers(userCount: number, dispatch: Dispatch<any>) {
         const address = `${user.location.street.name} ${user.location.street.number}, ${user.location.city}, ${user.location.country}, ${user.location.postcode}`;
 
         const dateOfBirth = dateParser(new Date(Date.parse(user.dob.date)));
+
+        console.log(postcodeChecker)
 
         return {
           name,
@@ -42,7 +44,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    getUsers(20, dispatch);
+    getUsers(100, dispatch);
   }, []);
 
   return (

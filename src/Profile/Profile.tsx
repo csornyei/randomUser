@@ -11,7 +11,10 @@ const Profile : React.FC = props => {
     let profileContent;
 
     if (!!selectedUser) {
-        profileContent = selectedUser.name;
+        profileContent =  <ul>
+            <li> {selectedUser.name} </li>
+            <li> {selectedUser.postcode} </li>
+        </ul>;
     } else {
         profileContent = <h1>Select a user</h1>
     }

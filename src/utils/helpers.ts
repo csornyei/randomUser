@@ -25,3 +25,35 @@ export const filterUsers = (users: UserData[], filters: Filters) => {
     }
   })
 }
+
+const isPrime = (n: number) => {
+  if (n <= 1) {
+    return false
+  }
+  for (let index = 2; index <= (n / 2); index++) {
+    if (n % index === 0) {
+      return false;
+    }
+  }
+  return true
+}
+
+export const postcodeChecker = (postcode: string) => {
+  let primeCount = 0;
+  const postcodeStr = `${postcode}`
+  for (let index = 1; index <= postcodeStr.length; index++) {
+    for (let j = 0; j < postcodeStr.length - index; j++) {
+      const str = postcodeStr.substring(j, j + index);
+      const num = parseInt(str);
+      if (num >= Math.pow(10, index - 1)) {
+        if (isPrime(num)) {
+          primeCount++;
+        }
+      }
+      if (primeCount >= 2) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
