@@ -3,6 +3,12 @@
     padding: 16px 6px;
     box-sizing: border-box;
 
+    cursor: pointer;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+
     &Even {
         background-color: var(--color-primary-med);
 
@@ -20,4 +26,20 @@
             background-color: var(--color-secondary-med);
         }
     }
+
+    &Selected {
+        background-color: red;
+
+        &:hover {
+            background-color: red;
+        }
+    }
+}
+
+.userImage {
+    border-radius: 50%;
+}
+
+.userText {
+    padding-left: 12px;
 }

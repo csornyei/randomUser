@@ -12,7 +12,8 @@ export const initialState : State = {
     ferfi: true,
     no: true
   },
-  users: []
+  users: [],
+  selectedUser: null
 }
 
 ReactDOM.render(
