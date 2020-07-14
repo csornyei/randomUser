@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './UserListItem.module.scss';
-import { UserData, State } from '../utils/types';
-import { selectUser } from '../state/actions';
+import { UserData, State } from '../../../utils/types';
+import { selectUser } from '../../../state/actions';
 import { useDispatch, useSelector } from 'react-redux';
 
 const UserListItem = (props: {index: number, user: UserData}) => {
@@ -20,9 +20,9 @@ const UserListItem = (props: {index: number, user: UserData}) => {
     }
 
     return (
-        <div className={classes.join(' ')} onClick={() => userClicked(props.user)} >
-            <img src={props.user.pictures.thumbnail} alt={props.user.name} className={styles.userImage} />
-            <h2 className={styles.userText} >{props.user.name}</h2>
+        <div className={classes.join(' ')} onClick={() => userClicked(props.user)} data-test="UserListItem" >
+            <img src={props.user.pictures.thumbnail} alt={props.user.name} className={styles.userImage} data-test="userImage" />
+            <h2 className={styles.userText} data-test="userName" >{props.user.name}</h2>
         </div>
     );
 }

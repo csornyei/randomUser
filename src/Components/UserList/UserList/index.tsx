@@ -1,9 +1,9 @@
 import React from 'react';
-import UserListItem from './UserListItem';
+import UserListItem from '../UserListItem';
 import styles from './UserList.module.scss'
 import { useSelector } from 'react-redux';
-import { State } from '../utils/types';
-import { USERS_ON_PAGE } from '../utils/constants';
+import { State } from '../../../utils/types';
+import { USERS_ON_PAGE } from '../../../utils/constants';
 
 const UserList : React.FC = props => {
 
@@ -24,7 +24,7 @@ const UserList : React.FC = props => {
     })
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} data-test="UserList">
             {listItems}
         </div>
     );

@@ -12,15 +12,15 @@ export type UserData = {
     name: string,
     pictures: {
         thumbnail: string,
-        normal: string,
+        normal?: string,
     },
-    gender: string,
-    email: string,
-    cell: string,
-    postcode: number,
-    address: string,
-    dateOfBirth: string,
-    age: number
+    gender?: string,
+    email?: string,
+    cell?: string,
+    postcode?: number,
+    address?: string,
+    dateOfBirth?: string,
+    age?: number
 }
 
 export type State = {

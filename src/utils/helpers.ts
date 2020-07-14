@@ -1,4 +1,6 @@
 import { UserData, Filters } from "./types";
+import configureStore from 'redux-mock-store';
+import { ReactWrapper } from "enzyme";
 
 const dateNumberFormatter = (n: number) => {
     if (n >= 10) {
@@ -7,7 +9,7 @@ const dateNumberFormatter = (n: number) => {
     return `0${n}`;
   }
 
-export const dateParser = (date: Date) => {
+const dateParser = (date: Date) => {
   const year = date.getFullYear();
   const month = date.getMonth();
   const day = date.getDate();
@@ -38,7 +40,7 @@ const isPrime = (n: number) => {
   return true
 }
 
-export const postcodeChecker = (postcode: string) => {
+const postcodeChecker = (postcode: string) => {
   let primeCount = 0;
   const postcodeStr = `${postcode}`
   for (let index = 1; index <= postcodeStr.length; index++) {
@@ -56,4 +58,40 @@ export const postcodeChecker = (postcode: string) => {
     }
   }
   return false;
+}
+
+export const getUsers = async (userCount: number) => {
+  const response = await fetch(`https://randomuser.me/api/?results=${userCount}`);
+  const data = await response.json();
+  return data.results.filter((user: any) => postcodeChecker(user.location.postcode)).map((user: any) => {
+      const name = `${user.name.first} ${user.name.last}`;
+      const pictures = {
+          thumbnail: user.picture.thumbnail,
+          normal: user.picture.medium
+      };
+      const address = `${user.location.street.name} ${user.location.street.number}, ${user.location.city}, ${user.location.country}, ${user.location.postcode}`;
+
+      const dateOfBirth = dateParser(new Date(Date.parse(user.dob.date)));
+
+      return {
+          name,
+          pictures,
+          gender: user.gender,
+          email: user.email,
+          cell: user.cell,
+          postcode: user.location.postcode,
+          address,
+          dateOfBirth,
+          age: user.dob.age
+      }
+  });
+}
+
+export const findByTestAttr = (component: ReactWrapper, attr: string) => {
+  return component.find(`[data-test='${attr}']`);
+}
+
+export const getMockStore = (initialState: any = {}) => {
+  const mockStore = configureStore([]);
+  return mockStore(initialState);
 }

@@ -1,5 +1,4 @@
-import { Action, Filters, UserData } from "../utils/types"
-
+import { Action, Filters, UserData } from "../utils/types";
 export const CHANGE_FILTER = "changeFilter";
 export const ADD_USERS = "addUsers";
 export const USER_SELECTED = "userSelected";

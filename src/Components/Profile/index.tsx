@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './Profile.module.scss';
 import { useSelector } from 'react-redux';
-import { State } from '../utils/types';
+import { State } from '../../utils/types';
 
 const Profile : React.FC = props => {
 
