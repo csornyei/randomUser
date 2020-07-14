@@ -1,9 +1,20 @@
 .app {
-  width: 95%;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: flex-start;
+}
+
+.col {
+  height: 100vh;
+  width: 50%;
+
+  &Left {
+    background-color: var(--color-primary-light);
+  }
+
+  &Right {
+    background-color: var(--color-secondary-light);
+  }
 }

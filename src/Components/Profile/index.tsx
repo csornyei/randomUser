@@ -11,10 +11,22 @@ const Profile : React.FC = props => {
     let profileContent;
 
     if (!!selectedUser) {
-        profileContent =  <ul>
-            <li> {selectedUser.name} </li>
-            <li> {selectedUser.postcode} </li>
-        </ul>;
+        profileContent =
+        <div className={styles.content}>
+            <div className={styles.contentProfilePic}>
+                <img src={selectedUser.pictures.normal} alt="Profile"/>
+            </div>
+            <div className={styles.contentBasic}>
+                <h1> {selectedUser.name} </h1>
+                <h4>  {selectedUser.age} ({selectedUser.dateOfBirth}) </h4>
+                <h4> {selectedUser.gender} </h4>
+            </div>
+            <div className={styles.contentContacts}>
+                <p> {selectedUser.email} </p>
+                <p> {selectedUser.cell} </p>
+                <p> {selectedUser.address} </p>
+            </div>
+        </div>;
     } else {
         profileContent = <h1>Select a user</h1>
     }

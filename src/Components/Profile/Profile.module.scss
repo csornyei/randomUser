@@ -1,7 +1,43 @@
 .container {
-    width: 48%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
 
-    background-color: coral;
+}
+
+.content {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: 60% 40%;
+    grid-template-areas:
+        "img basic"
+        "contact contact";
+
+    &ProfilePic{
+        grid-area: img;
+
+        img{
+            width:100%;
+            height:100%;
+            object-fit: cover;
+            overflow: hidden;
+        }
+    }
+
+    &Basic{
+        grid-area: basic;
+        margin-left: 5%;
+    }
+
+    &Contacts {
+        grid-area: contact;
+        display: flex;
+        flex-flow: column nowrap;
+        margin-top: 20px;
+
+        p {
+            margin: 2px;
+        }
+    }
 }

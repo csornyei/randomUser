@@ -28,10 +28,10 @@
     }
 
     &Selected {
-        background-color: red;
+        background-color: var(--color-selected);
 
         &:hover {
-            background-color: red;
+            background-color: var(--color-selected);
         }
     }
 }

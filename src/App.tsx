@@ -20,8 +20,12 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <UserListContainer />
-      <Profile />
+      <div className={[styles.col, styles.colLeft].join(' ')}>
+        <UserListContainer />
+      </div>
+      <div className={[styles.col, styles.colRight].join(' ')}>
+        <Profile />
+      </div>
     </div>
   );
 }

@@ -10,22 +10,22 @@
     user-select: none;
 
     &:hover {
-        background-color: darkgoldenrod;
+        background-color: var(--color-secondary-light);
     }
 
     &Current {
-        background-color: #00ffff;
+        background-color: var(--color-primary-med);
 
         &:hover {
-            background-color: #00cccc;
+            background-color: var(--color-primary-dark);
         }
     }
 
     &Inactive {
-        background-color: #696969;
+        background-color: var(--color-inactive-ligth);
 
         &:hover {
-            background-color: #424242;
+            background-color: var(--color-inactive-dark);
         }
     }
 }
