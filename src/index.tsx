@@ -6,6 +6,7 @@ import App from './App';
 import configureStore from './state/store';
 import { State } from './utils/types';
 
+
 export const initialState : State = {
   filters: {
     ferfi: true,
@@ -16,16 +17,6 @@ export const initialState : State = {
   selectedUser: null,
   currentPage: 1
 }
-
-
-// DONE - userek lekerese
-// DONE - userek listazasa
-// DONE - userek szurese
-// DONE - iranyitoszamban legalabb ket prim
-// DONE - pagination
-// TODO - teszteles
-// TODO - profil oldal
-// TODO - responsive
 
 ReactDOM.render(
   <React.StrictMode>

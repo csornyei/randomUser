@@ -21,7 +21,6 @@ describe('<Profile />', () => {
     describe('render', () => {
         it('should render without error', () => {
             const container = findByTestAttr(wrapper, 'ProfileContainer');
-            console.log(container.get(0))
             expect(container.length).toBe(1);
         });
 

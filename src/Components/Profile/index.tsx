@@ -32,7 +32,7 @@ const Profile : React.FC = props => {
     }
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} data-test="ProfileContainer">
             <h1>Profile</h1>
             {profileContent}
         </div>

@@ -2,4 +2,8 @@
     width: 100%;
     display: flex;
     flex-flow: column wrap;
+
+    @media (max-width: 768px) {
+        flex-direction: row;
+    }
 }

@@ -9,6 +9,19 @@
     flex-flow: row wrap;
     align-items: center;
 
+    @media (max-width: 768px) {
+        width: 20%;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    @media (max-width: 400px) {
+        width: 100%;
+        padding: 14px 0;
+    }
+
     &Even {
         background-color: var(--color-primary-med);
 
@@ -38,9 +51,19 @@
 
 .userImage {
     border-radius: 50%;
+
+    @media (max-width: 400px) {
+        display: none;
+    }
 }
 
 .userText {
     margin: 6px;
     padding-left: 12px;
+
+    @media (max-width: 768px) {
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+    }
 }
